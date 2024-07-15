@@ -40,31 +40,42 @@ function playRound(humanChoice, computerChoice ){
     if(humanChoice === computerChoice){
         console.log("Tie!");
         return 'tie';
-    }
-    else if(humanChoice === 0 && computerChoice === 1){
-        console.log("You lose. Paper beats rock.");
+    } 
+    else if ((humanChoice === "rock" && computerChoice === "paper") || (humanChoice === "paper" && computerChoice === "scissors") || (humanChoice === "scissors" && computerChoice === "rock")){
+        console.log("You lose. ${computerChoice} beats ${humanChoice}.");
         return 'lose';
     }
-    else if(humanChoice === 0 && computerChoice === 2 ){
-        console.log("You win! Rock beats scissors");
+    else {
+        console.log("You Win! + ${humanChoice} beast ${computerChoice}");
         return 'win';
     }
-    else if(humanChoice === 1 && computerChoice === 0 ){
-        console.log("You win! Paper beats rock");
-        return 'win';
-    }
-    else if(humanChoice === 1 && computerChoice === 2 ){
-        console.log("You lose. Scissors beats paper");
-        return 'lose';
-    }
-    else if(humanChoice === 2 && computerChoice === 0 ){
-        console.log("You lose. Rock beats scissors");
-        return 'lose';
-    }
-    else if(humanChoice === 2 && computerChoice === 1 ){
-        console.log("You win! Scissors beats paper.");
-        return 'win';
-    }
+
+    
+// Adjusted logic of the playRound function to compare strings
+    // else if(humanChoice === 0 && computerChoice === 1){
+    //     console.log("You lose. Paper beats rock.");
+    //     return 'lose';
+    // }
+    // else if(humanChoice === 0 && computerChoice === 2 ){
+    //     console.log("You win! Rock beats scissors");
+    //     return 'win';
+    // }
+    // else if(humanChoice === 1 && computerChoice === 0 ){
+    //     console.log("You win! Paper beats rock");
+    //     return 'win';
+    // }
+    // else if(humanChoice === 1 && computerChoice === 2 ){
+    //     console.log("You lose. Scissors beats paper");
+    //     return 'lose';
+    // }
+    // else if(humanChoice === 2 && computerChoice === 0 ){
+    //     console.log("You lose. Rock beats scissors");
+    //     return 'lose';
+    // }
+    // else if(humanChoice === 2 && computerChoice === 1 ){
+    //     console.log("You win! Scissors beats paper.");
+    //     return 'win';
+    // }
 }
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
